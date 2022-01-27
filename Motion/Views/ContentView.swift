@@ -23,10 +23,18 @@ struct ContentView: View {
                     let xPos = particle.x * size.width
                     let yPos = particle.y * size.height
                     
-                    // MARK: - Make particle blur when we drag
-                    context.opacity = 1 - (timelineData - particle.creationDate)
+                    // MARK: - Rainbow
+
+                    var contextCopy = context
+                    contextCopy.addFilter(.colorMultiply(Color(hue: particle.hue, saturation: 1, brightness: 1)))
+                    contextCopy.opacity = 1 - (timelineData - particle.creationDate)
+                    contextCopy.draw(particleSystem.image, at: CGPoint(x: xPos, y: yPos))
+
                     
-                    context.draw(particleSystem.image, at: CGPoint(x: xPos, y: yPos))
+//                    // MARK: - Make particle blur when we drag
+//                    context.opacity = 1 - (timelineData - particle.creationDate)
+                    
+//                    context.draw(particleSystem.image, at: CGPoint(x: xPos, y: yPos))
                 }
             }
         }
