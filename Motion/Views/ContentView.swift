@@ -15,10 +15,16 @@ struct ContentView: View {
             Canvas { context, size in
                 let timelineData = timeline.date.timeIntervalSinceReferenceDate
                 particleSystem.update(date: timelineData)
+                context.blendMode = .plusLighter
+                
+                //context.addFilter(.colorMultiply(.green))
                 
                 for particle in particleSystem.particles {
                     let xPos = particle.x * size.width
                     let yPos = particle.y * size.height
+                    
+                    // MARK: - Make particle blur when we drag
+                    context.opacity = 1 - (timelineData - particle.creationDate)
                     
                     context.draw(particleSystem.image, at: CGPoint(x: xPos, y: yPos))
                 }
