@@ -39,17 +39,17 @@ struct ContentView: View {
                     
                     
                     // MARK: - Rainbow
-
-//                    var contextCopy = context
-//                    contextCopy.addFilter(.colorMultiply(Color(hue: particle.hue, saturation: 1, brightness: 1)))
-//                    contextCopy.opacity = 1 - (timelineData - particle.creationDate)
-                    contextCopy.draw(particleSystem.image, at: CGPoint(x: xPos, y: yPos))
-
                     
-//                    // MARK: - Make particle blur when we drag
-//                    context.opacity = 1 - (timelineData - particle.creationDate)
+                    //                    var contextCopy = context
+                    //                    contextCopy.addFilter(.colorMultiply(Color(hue: particle.hue, saturation: 1, brightness: 1)))
+                    //                    contextCopy.opacity = 1 - (timelineData - particle.creationDate)
+                   
                     
-//                    context.draw(particleSystem.image, at: CGPoint(x: xPos, y: yPos))
+                    
+                    //                    // MARK: - Make particle blur when we drag
+                    //                    context.opacity = 1 - (timelineData - particle.creationDate)
+                    
+                    //                    context.draw(particleSystem.image, at: CGPoint(x: xPos, y: yPos))
                 }
             }
         }
@@ -57,7 +57,7 @@ struct ContentView: View {
                     .onChanged { drag in
             particleSystem.center.x = drag.location.x / UIScreen.main.bounds.width
             particleSystem.center.y = drag.location.y / UIScreen.main.bounds.height
-
+            
         })
         .ignoresSafeArea()
         .background(.black)
