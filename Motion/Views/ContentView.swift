@@ -10,8 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @State private var particleSystem = ParticleSystem()
     
-    let options: [(flipX: Bool, flipY: Bool)] =
-        [(false, true),
+    let options: [(flipX: Bool, flipY: Bool)] = [
+        (false, false),
+        (true, false),
+        (false, true),
+        (true, true)
     ]
     var body: some View {
         TimelineView(.animation) { timeline in
