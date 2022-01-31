@@ -26,14 +26,18 @@ struct ContentView: View {
                 //context.addFilter(.colorMultiply(.green))
                 
                 for particle in particleSystem.particles {
+                    var contextCopy = context
+                    contextCopy.addFilter(.colorMultiply(Color(hue: particle.hue, saturation: 1, brightness: 1)))
+                    contextCopy.opacity = 1 - (timelineData - particle.creationDate)
+                    
                     let xPos = particle.x * size.width
                     let yPos = particle.y * size.height
                     
                     // MARK: - Rainbow
 
-                    var contextCopy = context
-                    contextCopy.addFilter(.colorMultiply(Color(hue: particle.hue, saturation: 1, brightness: 1)))
-                    contextCopy.opacity = 1 - (timelineData - particle.creationDate)
+//                    var contextCopy = context
+//                    contextCopy.addFilter(.colorMultiply(Color(hue: particle.hue, saturation: 1, brightness: 1)))
+//                    contextCopy.opacity = 1 - (timelineData - particle.creationDate)
                     contextCopy.draw(particleSystem.image, at: CGPoint(x: xPos, y: yPos))
 
                     
