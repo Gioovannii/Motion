@@ -21,4 +21,8 @@ class MotionManager {
             self.yaw = motion.attitude.yaw
         }
     }
+    
+    deinit {
+        motionManager.stopDeviceMotionUpdates()
+    }
 }
