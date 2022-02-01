@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7BBB6B6A27A91A990087D0AA /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB6B6927A91A990087D0AA /* MotionManager.swift */; };
 		7BC0650627A2340500C0B6E9 /* MotionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC0650527A2340500C0B6E9 /* MotionApp.swift */; };
 		7BC0650827A2340500C0B6E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC0650727A2340500C0B6E9 /* ContentView.swift */; };
 		7BC0650A27A2340600C0B6E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BC0650927A2340600C0B6E9 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7BBB6B6927A91A990087D0AA /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		7BC0650227A2340500C0B6E9 /* Motion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC0650527A2340500C0B6E9 /* MotionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionApp.swift; sourceTree = "<group>"; };
 		7BC0650727A2340500C0B6E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				7BC0651327A234A600C0B6E9 /* Particle.swift */,
 				7BC0651727A2356700C0B6E9 /* ParticleSystem.swift */,
+				7BBB6B6927A91A990087D0AA /* MotionManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BC0651827A2356700C0B6E9 /* ParticleSystem.swift in Sources */,
+				7BBB6B6A27A91A990087D0AA /* MotionManager.swift in Sources */,
 				7BC0650827A2340500C0B6E9 /* ContentView.swift in Sources */,
 				7BC0651427A234A600C0B6E9 /* Particle.swift in Sources */,
 				7BC0650627A2340500C0B6E9 /* MotionApp.swift in Sources */,
