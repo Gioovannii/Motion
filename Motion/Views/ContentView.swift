@@ -38,6 +38,9 @@ struct ContentView: View {
                             xPos = size.width - xPos
                         }
 
+                        if option.flipY {
+                            yPos = size.height - yPos
+                        }
                         
                         contextCopy.draw(particleSystem.image, at: CGPoint(x: xPos, y: yPos))
                     }
