@@ -31,8 +31,13 @@ struct ContentView: View {
                     contextCopy.opacity = 1 - (timelineData - particle.creationDate)
                     
                     for option in options {
-                        let xPos = particle.x * size.width
-                        let yPos = particle.y * size.height
+                        var xPos = particle.x * size.width
+                        var yPos = particle.y * size.height
+
+                        if option.flipX {
+                            xPos = size.width - xPos
+                        }
+
                         
                         contextCopy.draw(particleSystem.image, at: CGPoint(x: xPos, y: yPos))
                     }
