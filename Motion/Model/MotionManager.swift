@@ -14,9 +14,11 @@ class MotionManager {
     var yaw = 0.0
 
     init() {
-        motionManager.startGyroUpdates(to: OperationQueue()) { [weak self] motion, error in
+        motionManager.startDeviceMotionUpdates(to: OperationQueue()) { [weak self] motion, error in
             guard let self = self, let motion = motion else { return }
-            self.pitch
+            self.pitch = motion.attitude.pitch
+            self.roll = motion.attitude.roll
+            self.yaw = motion.attitude.yaw
         }
     }
 }
