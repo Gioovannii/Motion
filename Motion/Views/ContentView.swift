@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var particleSystem = ParticleSystem()
+    @State private var motionHandler = MotionManager()
     
     let options: [(flipX: Bool, flipY: Bool)] = [
         (false, false),
@@ -16,6 +17,7 @@ struct ContentView: View {
         (false, true),
         (true, true)
     ]
+    
     var body: some View {
         TimelineView(.animation) { timeline in
             Canvas { context, size in
@@ -24,6 +26,8 @@ struct ContentView: View {
                 context.blendMode = .plusLighter
                 
                 //context.addFilter(.colorMultiply(.green))
+                
+                particleSystem.center = UnitPoint(x: 0.5 + motionHandler.roll, y: 0.5 + motionHandler.pitch)
                 
                 for particle in particleSystem.particles {
                     var contextCopy = context
